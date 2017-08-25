@@ -13,11 +13,12 @@ console.log(a,b,c,z)
 let o = {a,b,c,z};
 // o 
 
+
 // SWAPPING VARIBLES WITH DESTRUCTURING
 var x = 10 , y = 20;
 [x,y] = [y,x]
 // x
-//y
+// y
 
 // fumping data with empty spaces 
 var a = [1,2,3];
@@ -110,6 +111,7 @@ var config = {
         }
     }
 }
+config
 ////behavior of prototype cchaining
 var {A} = Object.create( {A:"Created"})
 console.log(A)
