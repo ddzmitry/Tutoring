@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome to my Jokes tutorial! </h1>
+    <div id="well"> </div>
+</body>
+<script>
+    console.log('Hello')
+
+    // CHALLANGE 
+    // here when user is going on this page we will try to fetch
+    // the server URL
+    //that eill fetch another URL and return us a joke
+
+//     async function displayData() {
+//         const data = await fetch('http://localhost:4000/joke');
+//         const jokeJson = await data.json()
+//         return  jokeJson
+//     }
+// let chuck = displayData()
+
+
+fetch('http://localhost:4000/joke')
+    .then(data => {
+       return  data.json()
+    }).then( joke =>{
+       let div =  document.getElementById('well')
+        div.innerHTML += joke.value.joke
+    })
+
+
+//  displayData()
+//     joke.then((jokeRs)=>{
+//         return jokeRs.value.joke
+//     }).then(jokeText => { 
+//         return jokeText
+
+//     })
+//     joke.then(data => console.log(data.value.joke))
+    // MAGIC! 
+    // HERE we are telling front end to fetch server side route
+    // and server gives a respond that includes a respnd from external server
+
+</script>
+
+</html>
