@@ -1,0 +1,37 @@
+body{
+    padding: 5%;
+    text-align: center;
+}
+
+.link-home{
+    position: absolute;
+    left: 30px;
+    top:30px;
+}
+.clue{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.text-hidden{
+ 
+   visibility: hidden;
+   animation:  fade-out;
+   animation-duration: 1s;
+}
+.text-revealed{
+    animation:  fade-in;
+    animation-duration: 1s;
+    visibility: visible;
+
+}
+@keyframes fade-in{
+    from { opacity: 0}
+    to {opacity: 100}
+}
+@keyframes fade-out{
+    from { opacity: 100}
+    to {opacity: 0}
+}
