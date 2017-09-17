@@ -11,9 +11,69 @@
 <body>
     <h1>Welcome to my Jokes tutorial! </h1>
     <div id="well"> </div>
+
+    <form action="/aplication" method="POST">
+        <div class="container">
+          <label><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+           
+          <label><b>name</b></label>
+          <input type="text" placeholder="Enter Name" name="name" required>
+    
+
+          <label><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+      
+          <label><b>Repeat Password</b></label>
+          <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      
+          <div class="clearfix">
+            <button type="submit" class="signupbtn">Sign Up</button>
+          </div>
+        </div>
+      </form>
+
+
+
+
+
+
+
+
+
+
 </body>
 <script>
     console.log('Hello')
+
+    let obj = {
+        name : "David",
+        job : "developer",
+        password : "hello1234",
+        age : 18,
+        isuser: true
+    }
+
+    // fetch( '/aplication', {
+    //     method : 'POST',
+    //     headers : {
+    //         'auth' : 'test'
+    //     },
+    //     body: JSON.stringify(obj)
+
+    // }).then((res)=>{
+    //     return res.json()
+    // }).then((data)=>{
+    //     console.log(data)
+    // })
+
+
+
+
+
+
+
+
 
     // CHALLANGE 
     // here when user is going on this page we will try to fetch
@@ -28,13 +88,13 @@
 // let chuck = displayData()
 
 
-fetch('http://localhost:4000/joke')
-    .then(data => {
-       return  data.json()
-    }).then( joke =>{
-       let div =  document.getElementById('well')
-        div.innerHTML += joke.value.joke
-    })
+// fetch('http://localhost:4000/joke')
+//     .then(data => {
+//        return  data.json()
+//     }).then( joke =>{
+//        let div =  document.getElementById('well')
+//         div.innerHTML += joke.value.joke
+//     })
 
 
 //  displayData()

@@ -2,11 +2,19 @@
 //Boiler Plate 
 const express = require('express');
 const path = require('path')
+const bodyparser = require('body-parser')
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
-//defining our app
 const app = express();
 const PORT = 4000;
+// bodyparser 
+app.use(bodyparser.json()) // body parser will take JSON
+app.use(bodyparser.urlencoded({extended:true})) // be able to send from front end to back end 
+app.use(bodyparser.text())// send ext from fromt end to backend
+app.use(bodyparser.json({type: "application/vnd.ai+json"})) // make a stream happened 
+
+//defining our app
+
 
 // Routes
 app.get('/', (req,res)=>{
@@ -28,7 +36,7 @@ app.get('/user/:name', (req,res)=>{
 // console.log()   
 const username = req.params.name;
 res.send(`
-<h1> Hello ${username}</h1>
+<h1> Hello dear ${username}</h1>
 
 `) })
 
@@ -51,7 +59,27 @@ app.get('/joke', (req,res)=>{
  });
 
 })
-   
+   ////// POSR 
+
+app.post('/aplication', (req,res)=>{
+        //our code will be here 
+
+        // here we will get pur data from form 
+        console.log(req.body)
+        //we will user username to redirect to another route 
+        res.redirect(`/user/${req.body.name}`)
+
+
+
+    //    let dataBack = {
+    //        key : 'sended'
+    //    }
+
+    //    res.json(dataBack)
+
+    
+
+})
 
 app.listen(PORT, () => {
     console.log(`Hey I am running on port ${PORT}`)
