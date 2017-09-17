@@ -28,7 +28,9 @@ RENDERING THE ELEMENT HERE
 function renderComponent(ComponentClass, props, state) {
   //creating a component witth renderIntoDocument method that will use our Window obj
   const componentInstance = TestUtils.renderIntoDocument(
+    // pushing reducers ,state to the create store redux function 
     <Provider store={createStore(reducers, state)}>
+    {/* and passing props to the component from reducer  */}
       <ComponentClass {...props} />
     </Provider>
   );
