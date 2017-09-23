@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Expresso</title>
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+     
+    <form action="/servey" method='POST'>
+        First name:<br>
+        <input type="text" name="firstname" value="Mickey">
+        <br>
+        Last name:<br>
+        <input type="text" name="lastname" value="Mouse">
+        <br><br>
+        <input type="submit" value="Submit">
+      </form> 
+    
+        <div class="container">
+
+        </div>
+</body>
+<script>
+
+// $.ajax({
+// 	url: 'http://localhost:4000/Mona',
+// 	type: 'GET',
+// })
+// .done(function(data) {
+//     console.log(data)
+//     var text = $('div')
+//     text.append(`
+//         <h1> ${data.name}</h1>
+//             <ul>
+//                 <li>Job: ${data.job}<li>
+//                     <li>Age: ${data.age}<li>
+//             </ul>
+//     `)
+//     $('.container').append(text)  
+// });
+
+</script>
+</html>
