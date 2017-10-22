@@ -25,6 +25,9 @@ function stack(state ={},action) {
 function stacks(state= [] ,action){
     switch(action.type){
         case LOAD_STACKS :
+    
+        console.log('STACKS')
+        console.log(action)
         // return action.payload 
             return action.stacks
         case ADD_STACK:

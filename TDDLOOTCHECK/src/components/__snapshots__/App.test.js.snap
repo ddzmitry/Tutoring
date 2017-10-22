@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should render the app 1`] = `
+exports[`App should render component 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {
     "buildPredicate": [Function],
@@ -10,7 +10,7 @@ ShallowWrapper {
   "length": 1,
   "node": <div>
     <h2>
-         Loot Check 
+         Loot Check
     </h2>
     <hr />
     <Connect(Wallet) />
@@ -18,7 +18,7 @@ ShallowWrapper {
   "nodes": Array [
     <div>
       <h2>
-             Loot Check 
+             Loot Check
       </h2>
       <hr />
       <Connect(Wallet) />
@@ -60,7 +60,7 @@ ShallowWrapper {
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div>
           <h2>
-                     Loot Check 
+                     Loot Check
           </h2>
           <hr />
           <Connect(Wallet) />
@@ -68,7 +68,7 @@ ShallowWrapper {
         "_debugID": 2,
         "_renderedOutput": <div>
           <h2>
-                     Loot Check 
+                     Loot Check
           </h2>
           <hr />
           <Connect(Wallet) />

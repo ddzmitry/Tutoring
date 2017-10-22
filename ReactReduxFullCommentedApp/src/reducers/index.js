@@ -3,10 +3,7 @@
 import { combineReducers }  from 'redux';
 // importing our constants  
 import {SET_STACK, LOAD_STACKS, ADD_STACK } from '../actions'
-
-
 // Reducers ->  compose an object how we should update the state 
-
 //return stack that was clicked
 function stack(state ={},action) {
     switch (action.type) {
@@ -34,7 +31,7 @@ function stacks(state= [] ,action){
             return [...state,{ ...action.stack,id: state.length }]           
             default:
         return state;
-    }
+    }s
 
 }
 

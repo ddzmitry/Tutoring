@@ -1,31 +1,28 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../actions/balance';
-export class Wallet extends React.Component {
+import React,{Component}from 'react';
+//  connect component to store 
+import {connect} from 'react-redux';
+
+export class Wallet extends Component {
   constructor() {
     super();
-   
+
   }
 
   render() {
-      window.props = this.props
-      
-    return (
-        <div>
-        <h3 className="balance">Wallet Ballance {this.props.balance}</h3>
-        </div>
-    )
+            return (
+            <div>
+
+                <h3 className="balance"> Wallet balance: {this.props.balance}</h3>
+
+            </div>  
+            )
   }
 
   componentDidMount() {
+
   }
 }
-const mapStateToProps = (state) => {
-    return {
-        // on;u one reducer 
-        balance: state
-    }
-}
 
-export default connect(mapStateToProps,actions)(Wallet);
-
+// connect itself returns a function 
+// mapStateToProps
+export default connect( state => {return {balance:state}}, null)(Wallet);

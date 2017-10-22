@@ -13,6 +13,7 @@ describe('Gift', () => {
     const gift = shallow(<Gift {...props}/>);
     // match th snapshot
     it('should be rendered', () => {
+        console.log(gift.debug())
         expect(gift).toMatchSnapshot()
     });
     

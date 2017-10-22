@@ -1,20 +1,21 @@
-import React,{Component} from 'react';
-import Wallet from './Wallet'
-class App extends React.Component {
+import React, {Component} from 'react';
+import Wallet from './Wallet';
+
+
+class App extends Component {
   constructor() {
     super();
-
+  
   }
 
   render() {
-    return (
+    return(
         <div>
-             <h2> Loot Check </h2>
-                 <hr/>
-                     <Wallet />
+        <h2> Loot Check</h2>
+        <hr/>
+          <Wallet />
         </div>
-       
-    )
+    ) 
   }
 
   componentDidMount() {

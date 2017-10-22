@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Wallet should render propperly 1`] = `
+exports[`Wallet renders properly 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {
     "buildPredicate": [Function],
@@ -12,7 +12,7 @@ ShallowWrapper {
     <h3
         className="balance"
     >
-        Wallet Ballance 
+         Wallet balance: 
         20
     </h3>
 </div>,
@@ -21,7 +21,7 @@ ShallowWrapper {
       <h3
             className="balance"
       >
-            Wallet Ballance 
+             Wallet balance: 
             20
       </h3>
 </div>,
@@ -68,7 +68,7 @@ ShallowWrapper {
           <h3
                     className="balance"
           >
-                    Wallet Ballance 
+                     Wallet balance: 
                     20
           </h3>
 </div>,
@@ -77,7 +77,7 @@ ShallowWrapper {
           <h3
                     className="balance"
           >
-                    Wallet Ballance 
+                     Wallet balance: 
                     20
           </h3>
 </div>,

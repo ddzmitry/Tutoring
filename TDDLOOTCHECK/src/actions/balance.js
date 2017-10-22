@@ -1,22 +1,12 @@
 
-import * as constans from './constants';
+// import our actions
+import * as constants from './constants'
+// ceate out action creator 
+export const setBalance = balance => {
 
-export function setBalance(balance = 0){
-    return {
-        type: constans.SET_BALANCE,
-         balance
-    }
-}
-export function deposit(deposit){
-    return {
-        type: constans.DEPOSIT,
-            deposit
-    }
-}
-
-export function withdraw(withdraw){
-    return {
-        type : constans.WITHDRAW,
-        withdraw
-    }
+        return {
+            type: constants.SET_BALANCE,
+            // balance is payload 
+            balance
+        }
 }

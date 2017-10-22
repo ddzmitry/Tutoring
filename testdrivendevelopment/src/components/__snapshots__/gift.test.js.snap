@@ -8,7 +8,9 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <div>
+  "node": <div
+    className="gift"
+>
     <Form
         bsClass="form"
         componentClass="form"
@@ -31,7 +33,6 @@ ShallowWrapper {
                 onChange={[Function]}
             />
         </FormGroup>
-           
         <FormGroup
             bsClass="form-group"
         >
@@ -62,7 +63,9 @@ ShallowWrapper {
     </Button>
 </div>,
   "nodes": Array [
-    <div>
+    <div
+      className="gift"
+>
       <Form
             bsClass="form"
             componentClass="form"
@@ -85,7 +88,6 @@ ShallowWrapper {
                         onChange={[Function]}
                   />
             </FormGroup>
-               
             <FormGroup
                   bsClass="form-group"
             >
@@ -165,7 +167,9 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div>
+        "_currentElement": <div
+          className="gift"
+>
           <Form
                     bsClass="form"
                     componentClass="form"
@@ -188,7 +192,6 @@ ShallowWrapper {
                                         onChange={[Function]}
                               />
                     </FormGroup>
-                       
                     <FormGroup
                               bsClass="form-group"
                     >
@@ -219,7 +222,9 @@ ShallowWrapper {
           </Button>
 </div>,
         "_debugID": 2,
-        "_renderedOutput": <div>
+        "_renderedOutput": <div
+          className="gift"
+>
           <Form
                     bsClass="form"
                     componentClass="form"
@@ -242,7 +247,6 @@ ShallowWrapper {
                                         onChange={[Function]}
                               />
                     </FormGroup>
-                       
                     <FormGroup
                               bsClass="form-group"
                     >

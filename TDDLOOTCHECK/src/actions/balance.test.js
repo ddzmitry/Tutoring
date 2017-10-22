@@ -1,24 +1,13 @@
-import * as constans from './constants';
+// action creators is funciton that returns data with action
+import * as constants from './constants';
 import * as actions from './balance';
 
 
-it('creates the action to set the balance', () => {
+it('creates ana ction to set the balance', () => {
+    
     const balance = 0;
-    const expected = {type:constans.SET_BALANCE, balance}
-    expect(actions.setBalance(balance)).toEqual(expected)
+    const expectedAction = {type:constants.SET_BALANCE, balance};
+    // now we describe how action creator will work
+    expect(actions.setBalance(balance)).toEqual(expectedAction);
+    
 });
-
-it('creates an action to deposit into the balance', () => {
-    const  deposit= 10;
-    const expectedAction = {type: constans.DEPOSIT, deposit}
-    expect(actions.deposit(deposit)).toEqual(expectedAction);
-
-});
-
-it('creates an action to withdraw from the balance', () => {
-    const  withdraw= 10;
-    const expectedAction = {type: constans.WITHDRAW, withdraw}
-    expect(actions.withdraw(withdraw)).toEqual(expectedAction);
-});
-
-
