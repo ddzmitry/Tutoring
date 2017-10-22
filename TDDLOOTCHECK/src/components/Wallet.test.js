@@ -6,8 +6,11 @@ import { shallow } from 'enzyme';
 import {Wallet} from './Wallet';
 describe('Wallet', () => {
 
+    // mocking functons
+    const mockDeposit = jest.fn();
+    const mockWithdraw = jest.fn();
     // now we can mock the props 
-    const props = {balance: 20 }
+    const props = {balance: 20 , deposit:mockDeposit, withdraw:mockWithdraw}
 
     const wallet = shallow(<Wallet {...props} />)
     
@@ -20,5 +23,47 @@ describe('Wallet', () => {
     it('dislays the balance from props', () => {
         expect(wallet.find('.balance').text()).toEqual(` Wallet balance: ${props.balance}`)
     });
+        // testing an input
+    
+    it('should create an input to deposite or withdrae the balance', () => {
+        expect(wallet.find('.input-walet').exists()).toBe(true);
+
+    });
+
+    
+    describe('when the user types into the walet input', () => {
+        const userBalance = 25;
+        beforeEach(()=>{
+            wallet.find('.input-walet').simulate('change',{target: {value:userBalance }})
+
+        })
+        
+        it('should update the balance and convert it to numbwr', () => {
+            expect(wallet.state().balance).toEqual(parseInt(userBalance,10))
+            
+        });
+
+        describe('and user wants to make a deposit',()=>{
+            // simulate deposit function click
+            beforeEach(()=> wallet.find('.btn-deposit').simulate('click'))
+
+            it('should  dispatch `deposit()` with the local balance', () => {
+                expect(mockDeposit).toHaveBeenCalledWith(parseInt(userBalance,10))
+            });
+            
+        })
+        describe('and user wants to make a withdraw', ()=>{
+            beforeEach(()=> wallet.find('.btn-withdraw').simulate('click'))
+
+            it('should  dispatch `withdraw()` with  the local balance', () => {
+
+                expect(mockWithdraw).toHaveBeenCalledWith(parseInt(userBalance,10))
+            });
+        })
+        
+
+    });
+    
+    
     
 });

@@ -2,13 +2,15 @@ import React from 'react';
 import { render } from 'react-dom';
 import App from './components/App';
 // now we need to set up the store 
-import {createStore} from 'redux';
-import rootReducer from './reducers/balance';
+//  applyMiddleware need wor reduxThunk
+import {createStore , applyMiddleware} from 'redux';
+import thunk from 'redux-thunk'
+import rootReducer from './reducers/index';
 import {Provider} from 'react-redux';
 // set up our store 
 const store = createStore(rootReducer,
-     /* preloadedState, */
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    // applying thunk here 
+    applyMiddleware(thunk)
 );
 
 render (
