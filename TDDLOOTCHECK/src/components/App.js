@@ -6,7 +6,6 @@ import Loot from './Loot'
 
 const App = () => {
 
-
     return(
         <div>
         <h2> Loot Check</h2>
