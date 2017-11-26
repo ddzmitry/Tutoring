@@ -10,7 +10,7 @@ ShallowWrapper {
   "length": 1,
   "node": <div>
     <h2>
-         Loot Check
+         Loot Checker
     </h2>
     <hr />
     <Connect(Wallet) />
@@ -20,7 +20,7 @@ ShallowWrapper {
   "nodes": Array [
     <div>
       <h2>
-             Loot Check
+             Loot Checker
       </h2>
       <hr />
       <Connect(Wallet) />
@@ -64,7 +64,7 @@ ShallowWrapper {
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div>
           <h2>
-                     Loot Check
+                     Loot Checker
           </h2>
           <hr />
           <Connect(Wallet) />
@@ -74,7 +74,7 @@ ShallowWrapper {
         "_debugID": 2,
         "_renderedOutput": <div>
           <h2>
-                     Loot Check
+                     Loot Checker
           </h2>
           <hr />
           <Connect(Wallet) />

@@ -8,7 +8,7 @@ const App = () => {
 
     return(
         <div>
-        <h2> Loot Check</h2>
+        <h2> Loot Checker</h2>
         <hr/>
           <Wallet />
           <hr />

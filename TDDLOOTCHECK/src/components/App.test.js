@@ -2,12 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
 
-
+// describ testcase
 describe('App', () => {
     // shallow render App
      const app = shallow(<App />);
 
     it('should render component', () => {
+        // console.log(app.debug())
         // will match the snapshot 
         expect(app).toMatchSnapshot();
     });

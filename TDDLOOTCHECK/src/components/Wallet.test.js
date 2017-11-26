@@ -15,6 +15,8 @@ describe('Wallet', () => {
     const wallet = shallow(<Wallet {...props} />)
     
     it('renders properly', () => {
+        console.log(wallet.find('h3').text())
+        expect(wallet.find('h3').text()).toEqual(" Wallet balance: " + props.balance)
         expect(wallet).toMatchSnapshot()
         // now we can see what balance is inside of the wallet and match it with our mock data
     });
