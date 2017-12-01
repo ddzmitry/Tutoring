@@ -49,3 +49,14 @@ console.log(
 	bar().join("") === "281012"
 );
 
+const random = () => (
+	new Array(3)
+	.fill(0)
+	.map(
+		(_,i) =>({
+			tag:'Hello',
+			count: Math.random()
+		})
+	)
+)
+console.log(random())

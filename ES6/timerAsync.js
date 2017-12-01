@@ -1,4 +1,4 @@
-
+var fetch = require('node-fetch');
 // function z, y
 let hardjob = (a,b) => a*b 
 let testig = (hardjob,a,b) => hardjob(a,b)
@@ -24,3 +24,25 @@ tester().then((data)=>{
   
   console.log(data)
 })
+
+async function foo() {
+  let arr = []
+  let x = await fetch('https://swapi.co/api/people/1')
+  let y = await fetch('https://swapi.co/api/people/2')
+  arr.push(x,y)
+  Promise.all(arr)
+  .then(data => console.log(data))
+}
+// foo()
+
+const FetchAll = (urls = []) => Promise.all(
+  urls.map(url=> fetch(url)
+    .then(r => r.json()
+      )
+    )
+)
+
+
+   FetchAll(['https://swapi.co/api/people/1','https://swapi.co/api/people/2'])
+   .then(data=>console.log(data))
+    
