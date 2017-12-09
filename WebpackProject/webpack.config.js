@@ -73,6 +73,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       // reference to html document that we have src/
       template: 'src/index.html'
+    }),
+    // deployment
+    new webpack.DefinePlugin({
+      // if path is `production` it will go faster without checking for errors
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
   ]
   // rimraf -> will clear build folder every time when we update webpack ('`Because we have too many hashed.js`')
