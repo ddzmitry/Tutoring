@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+        .gem {
+            box-sizing: border-box;
+            height: 100px;
+            width: 100px;
+            background-color: grey
+        }
+
+    </style>
+</head>
+
+<body>
+        <div id="root">
+            <div class="jumbotron">
+                    <pre>Score to achive</pre>
+                <h1 class="scoreNeeded"></h1>    
+                    <pre>User Score</pre>
+
+
+                <div>
+                    <pre>Wins <span class="wins"></span></pre>
+                    <pre>Looses <span class="looses"></span></pre>    
+                </div>    
+                <h1 class="userScore"></h1>    
+                
+            </div> 
+            <div class="row">
+                    <div class="gem col-md-3">Gem1</div>
+                    <div class="gem col-md-3">Gem2</div>
+                    <div class="gem col-md-3">Gem3</div>
+                    <div class="gem col-md-3">Gem4</div>
+            </div>
+ 
+        </div>
+</body>
+<script>
+
+
+
+    $( document ).ready(function() {
+        console.log( "ready!" );
+
+
+        //set value for divs
+        $('.gem').each(function(i,gem){
+            var randomGemScore = Math.floor(Math.random()*12)+1
+            console.log('randomGemScore',randomGemScore)
+            $(this).data('gemScore',randomGemScore)
+            //$(this).text(randomGemScore)
+        })
+    // So let say we have 4 gems
+    // each one of them is random
+    //I have score to achieve 
+    //If I achive => win
+    // If I fail I loose
+    //4 numbers
+    var gems = []
+    //score
+    var score = Math.floor(Math.random()*100)
+    console.log(score)
+    $('.scoreNeeded').text(score)
+
+    // user score to compare
+    var userScore = 0
+    console.log(score)    
+    $('.userScore').text(userScore)
+    
+    // weins/looases
+    var wins = 0
+    var looses = 0
+    // APPEND TEXTE
+    $('.wins').text(wins)
+    $('.looses').text(looses)    
+
+
+    $('.gem').on('click',function(e){
+        console.log($(this).text())
+     //we a re generating value
+
+     
+      var valueClicked = $(this).data('gemScore')
+      //set value for userScrore an update it
+      userScore = userScore + valueClicked
+      $('.userScore').text(userScore)
+
+      // it doesnt matte what you put in function
+      gameLogic(userScore)
+    })
+
+
+    function gameReset(){
+        console.log('Game RESET')
+        score = Math.floor(Math.random()*100)
+        console.log(score)
+        $('.scoreNeeded').text(score)
+
+        $('.gem').each(function(i,gem){
+            var randomGemScore = Math.floor(Math.random()*12)+1
+            console.log('randomGemScore',randomGemScore)
+            $(this).data('gemScore',randomGemScore)
+            //$(this).text(randomGemScore)
+        })
+        userScore = 0
+        $('.userScore').text(userScore)
+      
+    }
+
+
+
+    function gameLogic(userScore){
+        if(userScore==score){
+            console.log('You Won the game')
+            wins = wins + 1
+            $('.wins').text(wins)
+            gameReset()
+            
+        }
+        else if (userScore < score){
+            console.log('Keep Going')
+        }
+        else{
+            //score is bigger
+            console.log('You lost')
+            looses = looses + 1
+            $('.looses').text(looses) 
+            gameReset()
+            //game reset()
+        }
+
+    }
+
+    });
+
+</script>
+</html>
