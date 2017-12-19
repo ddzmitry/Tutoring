@@ -60,3 +60,11 @@ const random = () => (
 	)
 )
 console.log(random())
+// filtering on numbers
+let str = '12sdawdfwerfaew'
+let str2 = '1sdfgserdjawd'
+let str3 = '222dsfwesg'
+console.log([...str].filter(el=>parseInt(el)? el : '').join(''))
+console.log([...str2].filter(el=>parseInt(el)? el : '').join(''))
+console.log()
+const companyId = [...req.body.company_name].filter(el=>parseInt(el)? el : '').join('')
