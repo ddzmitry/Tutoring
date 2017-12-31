@@ -32,4 +32,4 @@ let ZigZag = ([...str],count)=>{
         return a
     },'')
 }
-console.log(ZigZag(str,5))
+console.log(ZigZag('AB',5))
