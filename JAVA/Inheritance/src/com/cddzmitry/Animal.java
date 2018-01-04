@@ -17,7 +17,39 @@ public class Animal {
         this.weight = weight;
     }
 
-//    create getters
+
+//    methods ==== Will be avaliable through inheritanse
+    public void eat(){
+        System.out.println("Nom nom nom");
+
+    }
+    public  void move(int speed){
+
+        System.out.println("Animal moves at speed " + speed);
+
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBrain(int brain) {
+        this.brain = brain;
+    }
+
+    public void setBody(int body) {
+        this.body = body;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    //    create getters
     public String getName() {
         return name;
     }
