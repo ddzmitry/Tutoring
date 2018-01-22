@@ -9,6 +9,12 @@ import {
   View,
   StyleSheet,
 } from 'react-vr';
+
+// import Drawer from 'material-ui/Drawer';
+// import MenuItem from 'material-ui/MenuItem';
+// import RaisedButton from 'material-ui/RaisedButton';
+
+
 const places = [
   {
     title:'Island Paradise'
@@ -27,17 +33,20 @@ class WorldTour extends Component {
   constructor(){
     super();
     this.state={
-      showMenue:false
+      showMenue:false,
+      open: false
     }
   }
   toggleMenue(){
     this.setState({showMenue: !this.state.showMenue})
     
   }
+  handleToggle = () => this.setState({open: !this.state.open});
   render() {
     return (
       <View>
         <Pano source={asset('starry-sky.jpg')}></Pano>
+
         <View
          onEnter ={()=>this.toggleMenue()}
          style={style.menuButton}>
@@ -49,9 +58,13 @@ class WorldTour extends Component {
         this.state.showMenue ? 
           <View>
             <Text> Menue </Text>
+            
           </View>:
           <View></View>
+
+
       }
+
       </View>
     )
   }
