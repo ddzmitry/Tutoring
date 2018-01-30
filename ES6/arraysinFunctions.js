@@ -68,3 +68,12 @@ console.log([...str].filter(el=>parseInt(el)? el : '').join(''))
 console.log([...str2].filter(el=>parseInt(el)? el : '').join(''))
 console.log()
 const companyId = [...req.body.company_name].filter(el=>parseInt(el)? el : '').join('')
+
+newStuff = (bool) => {
+    return new Promise((resolve,reject)=>{
+        bool ? resolve('Hello') : reject('404')
+    })
+}
+newStuff(true).then(data => {
+    console.log(data)
+}).catch(err=>console.log(err))
