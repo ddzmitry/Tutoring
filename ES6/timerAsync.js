@@ -33,7 +33,8 @@ async function foo() {
   Promise.all(arr)
   .then(data => console.log(data))
 }
-// foo()
+// Another Way! 
+const response = await (await fetch('http://api.icndb.com/jokes/random'));
 
 const FetchAll = (urls = []) => Promise.all(
   urls.map(url=> fetch(url)
