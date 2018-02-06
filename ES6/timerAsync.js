@@ -34,7 +34,10 @@ async function foo() {
   .then(data => console.log(data))
 }
 // Another Way! 
-const response = await (await fetch('http://api.icndb.com/jokes/random'));
+
+const response = await (await fetch('http://api.icndb.com/jokes/random')).json();;
+
+
 
 const FetchAll = (urls = []) => Promise.all(
   urls.map(url=> fetch(url)
