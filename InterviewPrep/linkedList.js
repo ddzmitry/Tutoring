@@ -132,6 +132,32 @@ linkedlist.prototype.remove = function(val){
     return;
 
 }
+
+linkedlist.prototype.swap = function(x,y){
+    // first we makr sure that both nodes arte in the linkedList
+    if(this.contains(x)&&this.contains(y)){   
+        //  [10] -> [20] ->[13] -> [18] -> [60]
+        console.log(x,y)
+        var xPrev = null
+        var yPrev = null
+        var xCurr = this.head
+        var yCurr = this.head
+
+        while(xCurr != null && xCurr.data != x){
+            xPrev = xCurr
+            xCurr = xCurr.next
+        }
+        while(yCurr != null && yCurr.data != y){
+            yPrev = yCurr
+            yCurr = yCurr.next
+        }
+        xPrev.next.data = y
+        yPrev.next.data = x
+        
+
+}
+}
+
 linkedlist.prototype.print = function(){
     var output = '[';
     var current = this.head;
@@ -146,12 +172,22 @@ linkedlist.prototype.print = function(){
     output += ']'
     return output
 }
+
+
+
+
 var list = new linkedlist()
 list
 list.append(10)
 list
 list.prepend(20)
-list
+list.append(13)
+
+list.prepend(90)
+list.prepend(100)
+list.prepend(15)
+
+
 list.append(30)
 console.log(list.contains(33))
 console.log(list.contains(30))
@@ -160,14 +196,19 @@ console.log(list)
 list.remove(20)
 list
 list.remove(30)
+list.prepend(24)
+
 list
 list.append(45)
-list.append('Foo')
-list.append('bar')
-list.append('bar')
 list.prepend(20)
 list.append(20)
 console.log(list.print())
+
+list.swap(24,45)
+console.log(list.print())
+list.swap(15,13)
+console.log(list.print())
+
 
 
 
